@@ -9,6 +9,7 @@ console.log('Initiating youtube-dl-module ...');
 
 function youtubeDL() {
 	var _this = this;
+	_this.apiKey = 'someRandomKey';
 }
 
 
@@ -32,16 +33,33 @@ youtubeDL.prototype.getVideosUrlFromQuery = function (query) {
 	return 0;
 }
 
+
 youtubeDL.prototype.getVideoFromURL = function (videoURL, onDLDone) {
   console.log("[youtubeDL::getVideoFromURL] Try to download: " + videoURL);
+  //Download videos in folder ../data/videos
   onDLDone();
   console.log("[youtubeDL::getVideoFromURL] File has been saved in " + videoURL);
 }
 
 
-youtubeDL.prototype.getVideoFromURL = function () {
+youtubeDL.prototype.getTranscriptForVideos = function () {
+	//Get
+	var _this = this;
+	
+	//Get videos from folder ../data/audios
+	//Save results in ../data/json
 
+	// To be Called from Nodejs-shell	
+	// curl -X POST --data-binary @audio/good-morning-google.flac --header 'Content-Type: audio/x-flac; rate=44100;' 'https://www.google.com/speech-api/v2/recognize?output=json&lang=en-us&key='+_this.apiKey
 }
+
+
+/* Fallback scenario*/
+youtubeDL.prototype.getVideoSubtitles = function () {
+	//Get video Subtitles with Nodejs and Youtube API ???
+	//easy Option
+}
+
 
 
 module.exports = new youtubeDL();
