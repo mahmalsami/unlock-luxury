@@ -42,6 +42,15 @@ youtubeDL.prototype.getVideoFromURL = function (videoURL, onDLDone) {
 }
 
 
+youtubeDL.prototype.convertVideoToAudio = function () {
+	//To be dl .flac or .wav	
+	//Get videos from folder ../data/videos
+	//Save within ../data/audio
+
+}
+
+
+
 youtubeDL.prototype.getTranscriptForVideos = function () {
 	//Get
 	var _this = this;
